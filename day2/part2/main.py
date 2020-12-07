@@ -1,3 +1,4 @@
+# one line method <!>(not the fastest way)<!>
 main = lambda x : len(
     [
         1 for i in [
