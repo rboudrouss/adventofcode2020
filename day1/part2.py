@@ -1,16 +1,6 @@
 # one line method <!>(not the fastest way)<!>
-main = lambda x : [
-    i*j*k
-    for i in list(map(int,x.split('\n')))
-        for j in list(map(int,x.split('\n')))
-            for k in list(map(int,x.split('\n')))
-                if j+i+k == 2020
-][0]
-
 if __name__ == "__main__":
-    with open('input.txt','r') as f:
-        inp = list(map(int,f.read().split('\n')))
-    print(main(inp))
+    print((lambda x : [i*j*k for i in x for j in x for k in x if j+i+k == 2020][0])(list(map(int,open('i').readlines()))))
 
 # this solution is better though :
 def main_faster(inp):

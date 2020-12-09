@@ -1,21 +1,10 @@
-# byr (Birth Year)
-# iyr (Issue Year)
-# eyr (Expiration Year)
-# hgt (Height)
-# hcl (Hair Color)
-# ecl (Eye Color)
-# pid (Passport ID)
-# cid (Country ID)
+if __name__ == "__main__":
+    print((lambda x,r : [r:=r+1 for i in x.split('\n\n') if all(map(lambda x : x in i,['byr','iyr','eyr','hgt','hcl','ecl','pid']))][-1])(open("i").read(),0))
 
-def main_debug(inp):
+def main_debug(inp): # 204
     inp = inp.split('\n\n')
     rep = 0
     for i in inp:
         if all(map(lambda x : x in i,['byr','iyr','eyr','hgt','hcl','ecl','pid'])):
             rep += 1
     return rep
-
-if __name__ == "__main__":
-    with open('input.txt','r') as f:
-        inp = f.read()
-    print(main_debug(inp))
